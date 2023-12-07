@@ -1,0 +1,55 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+
+.source {
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.url {
+  color: blue;
+  text-decoration: underline;
+}
+
+.urlimage {
+  max-width: 100%;
+  height: auto;
+}
+
+.publish-time {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.content {
+  line-height: 1.5;
+}
