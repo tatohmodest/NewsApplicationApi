@@ -18,7 +18,9 @@ body {
 
 h1{
   font-family: monospace, sans-serif;
-  font-size: 40px;
+  font-size: 60px;
+  padding-top: 50px;
+
   font-weight: bold;
   text-align: center;
   justify-content: center;
@@ -51,6 +53,10 @@ button{
 nav {
   background-color: #333;
   overflow: hidden;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top:0;
 }
 
 nav ul {
