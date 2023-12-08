@@ -10,13 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const v = document.querySelector('.urlimage');
   const p = document.querySelector('.publish-time');
   const c = document.querySelector('.content');
+ const searchInput = document.querySelector('#search-input');
+const searchButton = document.querySelector('#search-button');
+
+
+  let report = [];
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
       const articles = data.articles;
-      let i = 0;
-      const report = articles.map(item => {
+      report = articles.map(item => {
         return {
           source: item.source.name,
           author: item.author,
@@ -29,12 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
         };
       });
 
+      searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredData = report.filter(newsItem => newsItem.title.toLowerCase().includes(searchTerm));
+        updateArticle(filteredData[0]);
+      });
+
       next.addEventListener('click', () => {
         i++;
         if (i >= report.length) {
           i = 0;
         }
-        updateArticle(i);
+        updateArticle(report[i]);
       });
 
       previous.addEventListener('click', () => {
@@ -42,22 +52,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (i < 0) {
           i = report.length - 1;
         }
-        updateArticle(i);
+        updateArticle(report[i]);
       });
 
-      function updateArticle(index) {
-        s.innerHTML = report[index].source;
-        a.innerHTML = report[index].author;
-        t.innerHTML = report[index].title;
-        d.innerHTML = report[index].description;
-        u.href = report[index].url;
-        u.innerHTML = report[index].url;
-        v.src = report[index].urlToImage;
-        p.innerHTML = report[index].time;
-        c.innerHTML = report[index].content;
-      }
+      updateArticle(report[0]);
+    });
 
-      updateArticle(i);
-    })
-    .catch(error => console.log(error));
+  let i = 0;
+
+  function updateArticle(article) {
+    s.textContent = article.source;
+    a.textContent = article.author;
+    t.textContent = article.title;
+    d.textContent = article.description;
+    u.setAttribute('href', article.url);
+    v.setAttribute('src', article.urlToImage);
+    p.textContent = formatDate(article.time);
+    c.textContent = article.content;
+  }
+
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  }
 });

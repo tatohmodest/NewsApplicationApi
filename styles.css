@@ -1,5 +1,6 @@
 #about {
   padding: 20px;
+  font-size:20px ;
   background-color: #3e8e41;
 }
 
@@ -13,20 +14,22 @@
 }
 body {
   background-color: #f5f5f5;
+  font-family:"Times New Roman";
 }
 
 
 h1{
   font-family: monospace, sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   padding-top: 50px;
-
   font-weight: bold;
   text-align: center;
   justify-content: center;
 }
 .container {
   max-width: 600px;
+  font-family: "Sans Serif Collection";
+  font-size: 15px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
