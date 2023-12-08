@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const url = "https://newsapi.org/v2/everything?q=tesla&from=2023-11-07&sortBy=publishedAt&apiKey=3817b64befe743d19839e986551ec2d3";
+  const url = "https://newsapi.org/v2/everything?q=tesla&from=2023-11-08&sortBy=publishedAt&apiKey=3817b64befe743d19839e986551ec2d3";
   const next = document.querySelector('.button');
   const previous = document.querySelector('.button2');
   const s = document.querySelector('.source');
