@@ -45,8 +45,8 @@ button{
   cursor: pointer;
 }
 .button{
-  position: fixed;
-  top: 20%;
+  position: absolute;
+  top: 30%;
   right: 200px;
   transform: translateY(-50%);
 }
@@ -82,8 +82,8 @@ nav li a:hover {
 }
 
 .button2{
-  position: fixed;
-  top: 20%;
+  position: absolute;
+  top: 30%;
   left: 200px;
   transform: translateY(-50%);
 }
@@ -123,4 +123,14 @@ nav li a:hover {
 
 .content {
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .button {
+    position: static;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+  }
 }
